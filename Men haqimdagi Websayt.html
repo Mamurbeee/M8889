@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(120deg, #d4d4d4, #b29b7a);
+            animation: backgroundAnimation 2s infinite alternate;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(120deg, #d4d4d4, #b29b7a); }
+            50% { background: linear-gradient(120deg, #c2b280, #a39b8b); }
+            100% { background: linear-gradient(120deg, #e0e0e0, #8c857b); }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            width: 180px;
+            border-radius: 50%;
+            border: 3px solid #333;
+            transition: transform 0.5s, filter 0.5s;
+        }
+
+        img:hover {
+            transform: rotate(10deg) scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        .clickable-link {
+            text-decoration: none;
+            color: #8c857b;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.4s;
+        }
+
+        .clickable-link:hover {
+            color: #c2b280;
+            text-shadow: 0px 0px 8px #c2b280;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 999;
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .modal h2 {
+            color: #333;
+        }
+
+        .modal p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .close-btn {
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .close-btn:hover {
+            background: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello! I'm Mamurjon</h1>
+        <img src="images/888.jpg" alt="My Picture">
+        
+        <p><strong>Want to know more about me?</strong> <span class="clickable-link" onclick="openModal('aboutMeModal')">Click here!</span></p>
+        <p><strong>My Interests:</strong> <span class="clickable-link" onclick="openModal('interestsModal')">Click here!</span></p>
+        <p><strong>My Favorite Foods:</strong> <span class="clickable-link" onclick="openModal('foodModal')">Click here!</span></p>
+        <p><strong>My Favorite Colors:</strong> <span class="clickable-link" onclick="openModal('colorModal')">Click here!</span></p>
+        <p><strong>My Favorite Cars:</strong> <span class="clickable-link" onclick="openModal('carModal')">Click here!</span></p>
+        <p><strong>Where I Study:</strong> <span class="clickable-link" onclick="openModal('studyModal')">Click here!</span></p>
+        <p><strong>My Achievements:</strong> <span class="clickable-link" onclick="openModal('achievementsModal')">Click here!</span></p>
+        <p><strong>My Closest Classmate:</strong> <span class="clickable-link" onclick="openModal('classmateModal')">Click here!</span></p>
+    </div>
+    <p><strong>Email:</strong> mamurjonmatkarimov899@gmail.com</p>
+        <p><strong>Phone:</strong> +998 88 959 08 88</p>
+
+        <a class="btn-telegram" href="https://t.me/MAMUR_MM888" target="_blank">Contact me on Telegram</a>
+
+        <!-- QR Code -->
+        <div class="qr-container">
+            <p>Scan to connect on Telegram:</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://t.me/MAMUR_MM888" alt="QR Code" style="border-radius: 0;">
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="aboutMeModal" class="modal">
+        <h2>About Me</h2>
+        <p>I was born and raised in Gurlan district, Khorezm region. I am currently 20 years old.There are four of us in the family: my father, mother and brother.I am a student at TDIU SF, studying Digital Economy and Business Management.</p>
+        <button class="close-btn" onclick="closeModal('aboutMeModal')">Close</button>
+    </div>
+    <!-- Modals -->
+    <div id="interestsModal" class="modal">
+        <h2>My Interests</h2>
+        <p>I am passionate about creating interactive and visually appealing websites, exploring automation tools like Telegram bots, and personalizing web designs with creative elements.</p>
+        <button class="close-btn" onclick="closeModal('interestsModal')">Close</button>
+    </div>
+    <div id="colorModal" class="modal">
+    <h2>My Favorite Colors</h2>
+    <div>
+        <img src="images/366.png" alt="Color 1" style="width: 250px;">
+    </div>
+    <button class="close-btn" onclick="closeModal('colorModal')">Close</button>
+</div>
+
+    <div id="studyModal" class="modal">
+        <h2>Where I Study</h2>
+        <img src="images/tdiusf.jpg" alt="My University">
+        <button class="close-btn" onclick="closeModal('studyModal')">Close</button>
+    </div>
+
+    <div id="achievementsModal" class="modal">
+        <h2>My Achievements</h2>
+        <div class="achievements-container">
+            <img src="images/111.jpg" alt="Achievement 1" style="width: 80px;">
+            <img src="images/MMM.jpg" alt="Achievement 2" style="width: 150px;">
+            <img src="images/999.jpg" alt="Achievement 3" style="width: 150px;">
+        </div>
+        <button class="close-btn" onclick="closeModal('achievementsModal')">Close</button>
+    </div>
+
+    <div id="classmateModal" class="modal">
+        <h2>My Closest Classmate</h2>
+        <img src="images/1000.jpg" alt="My Closest Classmate">
+        <button class="close-btn" onclick="closeModal('classmateModal')">Close</button>
+    </div>
+    <div id="foodModal" class="modal">
+    <h2>My Favorite Foods</h2>
+    <div class="food-container">
+        <img src="images/333.jpg" alt="Dish 1" style="width: 80px;">
+        <img src="images/222.jpg" alt="Dish 2" style="width: 80px;">
+        <img src="images/888.jpg" alt="Dish 3" style="width: 80px;">
+        <img src="images/777.jpg" alt="Dish 4" style="width: 80px;">
+        <img src="images/788.jpg" alt="Dish 5" style="width: 80px;">
+        <img src="images/555.jpeg" alt="Dish 6" style="width: 80px;">
+    </div>
+    <button class="close-btn" onclick="closeModal('foodModal')">Close</button>
+</div>
+
+
+    <div id="carModal" class="modal">
+        <h2>My Favorite Cars</h2>
+        <div class="car-container">
+            <img src="images/bmw.webp" alt="Car 1">
+            <img src="images/bugatti.webp" alt="Car 2">
+        </div>
+        <button class="close-btn" onclick="closeModal('carModal')">Close</button>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
